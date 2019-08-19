@@ -1,0 +1,102 @@
+{
+  "editor.fontFamily": "Operator Mono Lig",
+  "editor.quickSuggestionsDelay": 30,
+  "editor.fontSize": 12,
+  "editor.letterSpacing": 0.1,
+  // "editor.lineHeight": 20,
+  "editor.renderWhitespace": "all",
+  "editor.renderIndentGuides": true,
+  "workbench.editor.tabSizing": "shrink",
+  "editor.fontWeight": "100",
+  "editor.fontLigatures": true,
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "window.menuBarVisibility": "toggle",
+  "terminal.integrated.fontSize": 12,
+  "editor.renderControlCharacters": true,
+  "editor.renderLineHighlight": "gutter",
+  "editor.renderFinalNewline": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.cursorWidth": 1,
+  "editor.minimap.enabled": false,
+  // "workbench.activityBar.visible": false,
+  "workbench.colorCustomizations": {
+    "editorLineNumber.activeForeground": "#F18F03",
+    "activityBar.background": "#222",
+    "activityBar.foreground": "#fafafa",
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+  },
+  "vs-kubernetes": {
+    "vs-kubernetes.helm-path": "/home/erenesmer/.vs-kubernetes/tools/helm/linux-amd64/helm",
+    "vs-kubernetes.kubectl-path": "/home/erenesmer/.vs-kubernetes/tools/kubectl/kubectl",
+    "vs-kubernetes.minikube-path": "/home/erenesmer/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+    "vs-kubernetes.draft-path": "/home/erenesmer/.vs-kubernetes/tools/draft/linux-amd64/draft"
+  },
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "d",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false,
+    "<C-x>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-w>": false
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "support.function",
+          "entity.name.function",
+          "meta.function",
+          "meta.function-call",
+          "constant",
+          "entity.name.function",
+          "meta.selector",
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+}
