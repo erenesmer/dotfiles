@@ -19,12 +19,10 @@ Plugin 'Markdown'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'isRuslan/vim-es6'
-Plugin 'cormacrelf/vim-colors-github'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 "Plugin 'bling/vim-airline'
 Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
-Plugin 'jpo/vim-railscasts-theme'
 
 "Plugin 'chriskempson/base16-vim'
 "Plugin 'terryma/vim-multiple-cursors'
@@ -72,7 +70,7 @@ map ; :Files<CR>
 
 function! StartUp()
 	if 0 == argc()
-		NERDTree
+		"NERDTree
 	end
 endfunction
 autocmd VimEnter * call StartUp()
@@ -125,9 +123,5 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-let g:vitality_tmux_can_focus = 1
+"let g:vitality_tmux_can_focus = 1
 
-augroup myCmds
-au!
-autocmd VimEnter * silent !echo -ne "\e[2 q"
-augroup END
