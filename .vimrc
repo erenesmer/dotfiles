@@ -1,6 +1,7 @@
 set nocompatible
 set encoding=UTF-8
 filetype off
+filetype plugin on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -21,7 +22,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'cormacrelf/vim-colors-github'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 Plugin 'jpo/vim-railscasts-theme'
 
@@ -48,7 +49,7 @@ syntax enable
 syntax on
 
 "colorscheme molokai
-
+colorscheme desert 
 highlight Comment ctermfg=green
 
 let g:vim_jsx_pretty_enable_jsx_highlight = 0
@@ -59,8 +60,8 @@ let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 map <silent> <C-n> :NERDTreeToggle %<CR>
-map <silent> <F4> :NERDTreeToggle <CR>
-map <silent> <F2> :TagbarToggle <CR>
+map <silent> <F4>  :NERDTreeToggle <CR>
+map <silent> <F2>  :TagbarToggle <CR>
 map <silent> <C-d> :vsplit<CR>
 map <silent> <S-d> :hide<CR>
 map <silent> <S-t> :vertical resize 30<CR>
@@ -89,16 +90,24 @@ set wildmenu
 set nobackup
 set noswapfile
 set nowrap
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
+"set paste
 "set cursorline!
+set history=1000
+set splitbelow splitright
+
+aug python
+    " ftype/python.vim overwrites this
+    au FileType python setlocal ts=2 sts=2 sw=2 noexpandtab
+aug end
 
 " move vertically by visual line:
 nnoremap j gj
 nnoremap k gk
-"set paste
+
 autocmd BufWritePre *.js %s/\s\+$//e
 
 set backup
@@ -113,18 +122,10 @@ endif
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-"let g:vitality_tmux_can_focus = 1
-colorscheme molokai 
-
-" use a slightly darker background, like GitHub inline code blocks
-let g:github_colors_soft = 1
-
-" more blocky diff markers in signcolumn (e.g. GitGutter)
-let g:github_colors_block_diffmark = 0
+let g:vitality_tmux_can_focus = 1
 
 augroup myCmds
 au!
