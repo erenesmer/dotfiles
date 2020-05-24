@@ -38,7 +38,6 @@ Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 "Plugin 'HerringtonDarkholme/yats.vim'
 "Plugin 'burnettk/vim-angular'
 
-
 call vundle#end()
 filetype plugin indent on
 filetype indent on
@@ -96,6 +95,7 @@ set expandtab
 "set cursorline!
 set history=1000
 set splitbelow splitright
+set colorcolumn=80
 
 aug python
     " ftype/python.vim overwrites this
