@@ -1,5 +1,6 @@
 #PROMPT="%~> "
-PROMPT='%(!.%F{red}.%F{cyan})%n%f@%F{yellow}%m%f%:${${(%):-%~}}%f$ '
+#PROMPT='%(!.%F{red}.%F{cyan})%n%f@%F{yellow}%m%f%:${${(%):-%~}}%f$ '
+PROMPT='%(!.%F{red}.%F{cyan})%n%f@%F{yellow}%m%f%:%~%f $ '
 PROMPT+='$(git_prompt_info) '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[white]%}git:(%{$fg[red]%}"
