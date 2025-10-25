@@ -1,0 +1,12 @@
+font-family=Berkeley Mono
+window-width=134
+window-height=34
+theme=1
+shell-integration=zsh
+shell-integration-features=no-cursor
+cursor-style=block
+adjust-cell-height=-1
+font-size = 13
+font-thicken
+font-thicken-strength=200
+
