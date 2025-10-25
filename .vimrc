@@ -9,6 +9,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go'
+Plugin 'fatih/molokai'
+Plugin 'gruvbox-community/gruvbox'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
@@ -23,6 +26,8 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 "Plugin 'bling/vim-airline'
 Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
+Plugin 'tomasiser/vim-code-dark'
+
 
 "Plugin 'chriskempson/base16-vim'
 "Plugin 'terryma/vim-multiple-cursors'
@@ -46,11 +51,41 @@ syntax enable
 syntax on
 
 "colorscheme molokai
-colorscheme desert 
+"colorscheme desert 
+"colorscheme gruvbox 
+"colorscheme default
+colorscheme habamax
 highlight Comment ctermfg=green
+set bg=dark
 
 let g:vim_jsx_pretty_enable_jsx_highlight = 0
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
+
+" vim-go settings
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_fmt_command = "goimports"
+let g:go_autodetect_gopath = 1
+let g:go_list_type = "quickfix"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_generate_tags = 1
+
+" Function to trigger completion without auto-insert
+function! GoCompleteDot()
+    return ".\<C-x>\<C-o>\<C-p>"
+endfunction
+
+" Enable auto completion on dot (without auto-inserting first item)
+au filetype go inoremap <buffer> <expr> . GoCompleteDot()
+
+" AutoComplPop configuration
+let g:acp_enableAtStartup = 0
+let g:acp_completeoptPreview = 1
+let g:acp_behaviorKeywordLength = 2
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
@@ -97,6 +132,12 @@ set history=1000
 set splitbelow splitright
 set colorcolumn=80
 
+" Better completion settings
+set completeopt=menu,menuone,longest,noselect
+set shortmess+=c
+set updatetime=300
+set completeopt-=preview
+
 aug python
     " ftype/python.vim overwrites this
     au FileType python setlocal ts=2 sts=2 sw=2 noexpandtab
@@ -114,14 +155,13 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
-if (has("termguicolors"))
-	set termguicolors
-endif
+"if (has("termguicolors"))
+"	set termguicolors
+"endif
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
 "let g:vitality_tmux_can_focus = 1
-
